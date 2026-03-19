@@ -12,11 +12,11 @@ def root():
 @app.post('/items')
 def create_item(item: str):
     items.append(item)
-    return items
+    return item
 
 @app.get('/items')
-def get_items():
-    return items
+def list_items(limit:int = 10):
+    return items[0:limit]
 
 @app.get('/items/{item_id}')
 def get_item(item_id: int) -> str:
