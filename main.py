@@ -23,7 +23,7 @@ def create_item(item: Item):
     return item
 
 
-@app.get('/items', response_model=List[Item])
+@app.get('/items', response_model=list[Item])
 def list_items(limit: int = 10) -> list[Item]:
     return items[0:limit]
 
